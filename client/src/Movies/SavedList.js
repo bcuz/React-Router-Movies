@@ -6,6 +6,10 @@ export default class SavedList extends Component {
     super(props);
   }
 
+  handleClick = () => {
+    this.props.history.push('/')
+  }
+
   render() {
     return (
       <div className="saved-list">
@@ -13,7 +17,7 @@ export default class SavedList extends Component {
         {this.props.list.map(movie => (
           <NavLink to={`/movies/${movie.id}`} activeClassName="saved-active" className="saved-movie">{movie.title}</NavLink>
         ))}
-        <NavLink to="/" className="home-button">Home</NavLink>
+        <div onClick={this.handleClick} to="/" className="home-button">Home</div>
       </div>
     );
   }
