@@ -17,7 +17,7 @@ export default class SavedList extends Component {
         {this.props.list.map(movie => (
           <NavLink to={`/movies/${movie.id}`} activeClassName="saved-active" className="saved-movie">{movie.title}</NavLink>
         ))}
-        <div onClick={this.handleClick} to="/" className="home-button">Home</div>
+        <div onClick={this.handleClick} className="home-button">Home</div>
       </div>
     );
   }
